@@ -1,10 +1,7 @@
 const mongodb=require("mongodb");
 const MongoClient=mongodb.MongoClient;
-let mongoDbUrl="mongodb+srv://venkyeswar2037:7112001Venky@shripriti.gize4ik.mongodb.net/?retryWrites=true&w=majority";
+let mongoDbUrl="mongodb+srv://venkyeswar:7112001746@cluster0.qpo13la.mongodb.net/?retryWrites=true&w=majority";
 
-if(process.env.MONGODB_URL){
-    mongoDbUrl=process.env.MONGODB_URL;
-}
 let database;
 async function connect(){
     const client=await MongoClient.connect(mongoDbUrl);
