@@ -1,0 +1,27 @@
+#icon{
+    margin:12rem 7rem;
+}
+#icon h1,h2{
+  font-family: 'Amita', serif;
+  font-weight:bolder;
+  color:rgb(16, 0, 80);
+}
+#icon h2{
+    margin-left:2rem;
+    margin-top:1rem;
+    text-transform:capitalize;
+    color:rgb(124, 107, 220);
+  
+}
+#icon h2::after{
+    content:" !";
+}
+#icon p a{
+    text-decoration:none;
+    font-family: 'Amita', serif;
+    font-size:1.5rem;
+    font-weight:bold;
+    color:rgb(255, 90, 90);
+    margin-left:-1rem;
+}
+

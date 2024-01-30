@@ -1,0 +1,61 @@
+#errorMessage{
+    color:rgb(254, 2, 2);
+    position:absolute;
+    font-weight:bolder;
+    width:20rem;
+    background-color:rgba(255, 166, 0, 0.539);
+    height:5rem;
+    text-align:center;
+    padding-top:1rem;
+    margin-left:2rem;
+    font-size:1.2rem;
+    border-radius:10px;
+   
+}
+#signup{
+    color:red;
+    margin-left:35%;
+    margin-top:8rem;
+    font-size:2rem;
+    font-weight:bolder;
+
+}
+.form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+form{
+    margin-left:-1.5rem;
+    margin-top:1rem;
+}
+form ul{
+    list-style-type: none;
+}
+form ul li{
+    margin-top:1.5rem;
+}
+
+form ul li input{
+    border:none;
+    border-bottom:3px solid rgb(1, 3, 57);
+    background:transparent;
+    outline:none;
+    font-size:1.5rem;
+}
+input:-webkit-autofill{
+    background-color: transparent;
+}
+
+form button{
+    color:red;
+    background-color:transparent;
+    border:none;
+    margin-left:40%;
+    font-size:1.5rem;
+    border-bottom:3px solid rgb(3, 34, 101);
+}
+#loginOption{
+    margin-top:1rem;
+    font-size:1.2rem;
+}

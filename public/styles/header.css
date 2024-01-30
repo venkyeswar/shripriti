@@ -1,0 +1,21 @@
+
+nav ul{
+    display:flex;
+    flex-direction:row;
+    list-style-type:none;
+    margin:2rem 1.5rem;
+    
+    
+   
+
+}
+nav ul li{
+    margin-left:1.67rem;
+   
+    font-family: 'Antic Didone', serif;
+font-size:1.5rem;
+}
+nav ul li a{
+    text-decoration:none;
+    font-weight:bold;
+}

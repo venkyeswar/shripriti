@@ -1,0 +1,30 @@
+<%-include('../shared/metadata')%>
+<link rel="stylesheet" href="./styles/login.css">
+<script src="./scripts/login.js" defer></script>
+</head>
+<body>
+    <%-include('../shared/header')%>
+   
+        <% if(loginData.hasError){%>
+    <p id="errorMessage">
+        <%= loginData.message%>
+    </p>
+     <%}%>
+   
+     <h1 id="login">Login !</h1>
+    <div class="form">
+ 
+        <form action="/login" method="POST">
+            <input type="hidden" value="<%= csrfToken%>" name="_csrf">
+            <ul>
+                <li><label for="email" id="email">Email</label></li>
+                <li><input type="email" name="email"  value="<%= loginData.email%>" placeholder="email"></li>
+                
+                <li><label for="password">password</label></li>
+                <li><input type="password" name="password" value="<%= loginData.password%>" placeholder="password"></li>
+            </ul>
+            <button type="submit">login</button>
+        </form>
+        <p id="signupOption">Don't have an Account ?&nbsp <a href="/signup"> Signup</a></p>
+    </div>
+</body>
