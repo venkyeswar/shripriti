@@ -1,5 +1,5 @@
 const validation=require('../util/validation');
-//const error=require('../util/validation.session');
+const error=require('../util/validation.session');
 const User=require('../models/user.model');
 
 // GET HOME function
@@ -15,18 +15,18 @@ async function getHome(req,res){
 
 // GET LOGIN function
 function getLogin(req,res){
-    // let loginData=req.session.loginData;
-    // if(!loginData){
-    //     loginData={
-    //         hasError:false,
-    //         name:"",
-    //         email:""
-    //     }
-    // }
-    // req.session.loginData=null;
-    // const csrfToken=req.csrfToken();
+    let loginData=req.session.loginData;
+    if(!loginData){
+        loginData={
+            hasError:false,
+            name:"",
+            email:""
+        }
+    }
+    req.session.loginData=null;
+    const csrfToken=req.csrfToken();
     // {loginData:loginData,csrfToken:csrfToken}
-    res.render('./user/login');
+    res.render('./user/login',{loginData:loginData});
 }
 
 // GET SIGNUP function
@@ -101,25 +101,25 @@ async function postLogin(req,res){
     
 const user=new User({...enteredData});
 const existingUser=await user.existingUser();
-    // if(!existingUser){
-    //     req.session.loginData=error.errorData(enteredData,errorMessage="Check the Inputs Once");
-    //     req.session.save(function(){
-    //         return res.redirect('/login');
-    //     });
-    //     return;
-    // }
+    if(!existingUser){
+        req.session.loginData=error.errorData(enteredData,errorMessage="Check the Inputs Once");
+        req.session.save(function(){
+            return res.redirect('/login');
+        });
+        return;
+    }
 if(!existingUser){
     return res.redirect('/login');
 }
 const passwordsAreEqual=await user.passwordsAreEqual(existingUser.password);
 
-// if(!passwordsAreEqual){
-//     req.session.loginData=error.errorData(enteredData,errorMessage="Wrong Password");
-//     req.session.save(function(){
-//         return res.redirect('/login');
-//     });
-//     return;
-// }
+if(!passwordsAreEqual){
+    req.session.loginData=error.errorData(enteredData,errorMessage="Wrong Password");
+    req.session.save(function(){
+        return res.redirect('/login');
+    });
+    return;
+}
 if(!passwordsAreEqual){
     return res.redirect('/login')
 }
