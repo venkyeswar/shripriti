@@ -8,15 +8,12 @@
     <%-include('./shared/header')%>
   
 <section id="icon">
-    <% if(!locals.isAuth){%>
+
     <p><a href="/login">Please login ..!</a></p>
-    <%}%>
+   
 
-    <%if(locals.isAuth){%>
+    
     <h1>Welcome</h1>
-
-    <h2><%= user.name%></h2>
-    <%}%>
 
 </section>
 </body>

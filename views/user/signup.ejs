@@ -4,24 +4,22 @@
 </head>
 <body>
     <%-include('../shared/header')%>
-    <% if(data.hasError){%>
-        <p id="errorMessage"><%=data.message%></p>
-    <%}%>
+    
     <h1 id="signup">Signup</h1>
     <div class="form">
         <form action="/signup" method="POST" autocomplete="off">
-            <input type="hidden" value="<%= csrfToken%>" name="_csrf">
+            <!-- <input type="hidden" value="" name="_csrf"> -->
             <ul>
                 <!-- <li><label for="name">Name</label></li> -->
-                <li><input type="text" name="name" value="<%=data.name%>"placeholder="Name" required ></li>
+                <li><input type="text" name="name" value="1"placeholder="Name" required ></li>
                 <!-- <li><label for="email">email</label></li> -->
-                <li><input type="email" name="email" placeholder="Email" value="<%=data.email%>" required></li>
+                <li><input type="email" name="email" placeholder="Email" value="1" required></li>
                 <!-- <li><label for="confirmEmail">Confirm Email</label></li> -->
-                <li><input type="email" name="confirmEmail" placeholder="Confirm Email" value="<%=data.confirmEmail%>" required></li>
+                <li><input type="email" name="confirmEmail" placeholder="Confirm Email" value="1" required></li>
                 <!-- <li><label for="password">password</label></li> -->
-                <li><input type="password" name="password" placeholder="Password" value="<%=data.password%>" required></li>
+                <li><input type="password" name="password" placeholder="Password" value="1" required></li>
                 <!-- <li><label for="confirmPassword">Confirm Password</label></li> -->
-                <li><input type="password" name="confirmPassword" placeholder="Confirm Password" value="<%=data.confirmPassword%>" required></li>
+                <li><input type="password" name="confirmPassword" placeholder="Confirm Password" value="1" required></li>
             </ul>
             <button type="submit">Singup</button>
         </form>
