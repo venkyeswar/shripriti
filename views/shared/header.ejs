@@ -2,13 +2,13 @@
 
     <ul>
         <li><a href="/">Home</a></li>
-            
+            <% if(!locals.isAuth){%>
             <li><a href="/login">login</a></li>
             <li><a href="/signup">signup</a></li>
-     
-       
+        <%}%>
+        <% if(locals.isAuth){%>
             <li><a href="/logout">Logout</a></li>
-        
+        <%}%>
     </ul>
  
 </nav>

@@ -6,7 +6,7 @@ const mongoDbStore=require('connect-mongodb-session');
 function createSessionStore(){
     const MongoDbStore=mongoDbStore(expressSession);
     const store=new MongoDbStore({
-        url:'mongodb+srv://venkyeswar:7112001746@cluster0.qpo13la.mongodb.net/?retryWrites=true&w=majority',
+        uri:'mongodb+srv://venkyeswar:7112001746@cluster0.qpo13la.mongodb.net/?retryWrites=true&w=majority',
         database:'shripriti',
         collection:'sessions',
     });

@@ -15,7 +15,7 @@
     <div class="form">
  
         <form action="/login" method="POST">
-            
+            <input type="hidden" value="<%= csrfToken%>" name="_csrf">
             <ul>
                 <li><label for="email" id="email">Email</label></li>
                 <li><input type="email" name="email"  value="<%= loginData.email%>" placeholder="email"></li>
