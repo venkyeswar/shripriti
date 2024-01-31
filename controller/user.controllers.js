@@ -24,7 +24,7 @@ function getLogin(req,res){
         }
     }
     req.session.loginData=null;
-    const csrfToken=req.csrfToken();
+    // const csrfToken=req.csrfToken();
     // {loginData:loginData,csrfToken:csrfToken}
     res.render('./user/login',{loginData:loginData});
 }
